@@ -1353,6 +1353,15 @@ header .nav-link.active::after {
     font-size: 0.92rem;
 }
 
+/* ===== Plant Edit Page ===== */
+.plant-preview-card {
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+}
+.plant-preview-card .markdown-body {
+    font-size: 0.92rem;
+}
+
 /* Markdown body base styling */
 .markdown-body {
     line-height: 1.7;
