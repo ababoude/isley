@@ -16,7 +16,7 @@
             <i class="fa-solid fa-plus me-2"></i>{{ .lcl.add_strain }}
         </h1>
         <a href="/strains" class="btn btn-secondary">
-            <i class="fa-solid fa-xmark me-1"></i> Cancel
+            <i class="fa-solid fa-xmark me-1"></i> {{ .lcl.cancel }}
         </a>
     </div>
 
@@ -28,7 +28,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-circle-info me-1"></i> Basic Info
+                            <i class="fa-solid fa-circle-info me-1"></i> {{ .lcl.modal_title_info }}
                         </h2>
 
                         <div class="row g-3">
@@ -42,7 +42,7 @@
                             <div class="col-md-6">
                                 <label for="editBreederSelect" class="form-label required">{{ .lcl.breeder }}</label>
                                 <select class="form-select" id="editBreederSelect" required>
-                                    <option value="" disabled selected>Select breeder...</option>
+                                    <option value="" disabled selected>{{ .lcl.modal_strain_breeder_select }}</option>
                                     {{ range .breeders }}
                                     <option value="{{ .ID }}">{{ .Name }}</option>
                                     {{ end }}
@@ -75,7 +75,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-dna me-1"></i> Genetics
+                            <i class="fa-solid fa-dna me-1"></i> {{ .lcl.modal_title_genetics }}
                         </h2>
 
                         <div class="row g-3">
@@ -126,15 +126,15 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h2 class="h5 card-title text-primary mb-0">
-                                <i class="fa-solid fa-file-lines me-1"></i> {{ .lcl.description_txt }}
+                                <i class="fa-solid fa-file-lines me-1"></i> {{ .lcl.modal_title_description }}
                             </h2>
                             <!-- Markdown toolbar -->
                             <div class="btn-group btn-group-sm" role="toolbar" aria-label="Markdown formatting">
-                                <button type="button" class="btn btn-outline-secondary md-btn" title="Bold" data-md-action="wrap" data-md-before="**" data-md-after="**"><i class="fa-solid fa-bold"></i></button>
-                                <button type="button" class="btn btn-outline-secondary md-btn" title="Italic" data-md-action="wrap" data-md-before="*" data-md-after="*"><i class="fa-solid fa-italic"></i></button>
-                                <button type="button" class="btn btn-outline-secondary md-btn" title="Heading" data-md-action="prefix" data-md-prefix="### "><i class="fa-solid fa-heading"></i></button>
-                                <button type="button" class="btn btn-outline-secondary md-btn" title="Link" data-md-action="link"><i class="fa-solid fa-link"></i></button>
-                                <button type="button" class="btn btn-outline-secondary md-btn" title="List" data-md-action="prefix" data-md-prefix="- "><i class="fa-solid fa-list"></i></button>
+                                <button type="button" class="btn btn-outline-secondary md-btn" title="{{ .lcl.bold }}" data-md-action="wrap" data-md-before="**" data-md-after="**"><i class="fa-solid fa-bold"></i></button>
+                                <button type="button" class="btn btn-outline-secondary md-btn" title="{{ .lcl.italic }}" data-md-action="wrap" data-md-before="*" data-md-after="*"><i class="fa-solid fa-italic"></i></button>
+                                <button type="button" class="btn btn-outline-secondary md-btn" title="{{ .lcl.heading }}" data-md-action="prefix" data-md-prefix="### "><i class="fa-solid fa-heading"></i></button>
+                                <button type="button" class="btn btn-outline-secondary md-btn" title="{{ .lcl.link }}" data-md-action="link"><i class="fa-solid fa-link"></i></button>
+                                <button type="button" class="btn btn-outline-secondary md-btn" title="{{ .lcl.list }}" data-md-action="prefix" data-md-prefix="- "><i class="fa-solid fa-list"></i></button>
                             </div>
                         </div>
                         <textarea class="form-control font-monospace" id="editStrainDescription" rows="16" style="resize: vertical;"></textarea>
@@ -156,7 +156,7 @@
                 <div class="card strain-preview-card sticky-top" style="top: 1rem;">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-eye me-1"></i> Preview
+                            <i class="fa-solid fa-eye me-1"></i> {{ .lcl.modal_preview_title }}
                         </h2>
                         <div class="markdown-body" id="markdownPreview">
                         </div>

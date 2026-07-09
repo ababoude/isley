@@ -27,10 +27,10 @@
 
             <!-- Layout toggle -->
             <div class="btn-group" role="group" aria-label="Layout toggle">
-                <button class="btn btn-sm layout-toggle active" data-layout="cards" title="Card view">
+                <button class="btn btn-sm layout-toggle active" data-layout="cards" title="{{ .lcl.layout_grid }}">
                     <i class="fa-solid fa-grip"></i>
                 </button>
-                <button class="btn btn-sm layout-toggle" data-layout="table" title="Table view">
+                <button class="btn btn-sm layout-toggle" data-layout="table" title="{{ .lcl.layout_table }}">
                     <i class="fa-solid fa-table-list"></i>
                 </button>
             </div>
@@ -111,7 +111,7 @@
     <!-- Empty state -->
     <div id="emptyState" class="strains-empty" style="display:none;">
         <i class="fa-solid fa-cannabis fa-3x text-muted mb-3"></i>
-        <p class="text-muted">No strains match your filters.</p>
+        <p class="text-muted">{{ .lcl.no_strain_match }}</p> 
     </div>
 </div>
 
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function populateBreederFilter() {
         const breeders = [...new Set(allStrains.map(s => s.breeder).filter(Boolean))].sort();
         const current = filterBreeder.value;
-        filterBreeder.innerHTML = '<option value="">All</option>';
+        filterBreeder.innerHTML = '<option value="">{{ .lcl.filter_all }}</option>';
         breeders.forEach(b => {
             const opt = document.createElement("option");
             opt.value = b;
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        resultCount.textContent = `${data.length} strain${data.length !== 1 ? "s" : ""}`;
+        resultCount.textContent = `${data.length} ${data.length !== 1 ? "{{ .lcl.title_strains_low }}" : "{{ .lcl.title_strain_low }}"}`;
 
         if (data.length === 0) {
             cardsContainer.innerHTML = "";

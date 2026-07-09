@@ -190,7 +190,6 @@ title_type: "Type"
 title_show_hide: "Show/Hide"
 title_created: "Created"
 title_updated: "Updated"
-
 title_show: "Show"
 title_hide: "Hide"
 select_zone: "Select Zone"
@@ -698,3 +697,59 @@ activity_filter_reset: "Reset"
 activity_filter_any: "Any"
 activity_required_metrics: "Required metrics"
 activity_optional_metrics: "Optional metrics"
+
+## FIX 05/07/2026 by Ababoude
+# Parameters
+title_stage: "State"
+title_low: "Low"
+title_high: "High"
+vpd: "VPD Stage Ranges"
+settings_vpd_desc: "Set the ideal VPD range (kPa) for each growth stage. Leave blank to disable the indicator."
+line_range_100: "Last 100 lines"
+line_range_200: "Last 200 lines"
+line_range_500: "Last 500 lines"
+line_range_1000: "Last 1000 lines"
+stream_grab: "Stream Capture Settings"
+
+
+# Plants
+title_plant_low: "plant"
+title_plants_low: "plants"
+modal_plant_zone_search: "Type to search zones..."
+modal_plant_strain_search: "Type to search strains..."
+
+# Strains
+title_strain_low: "strain"
+title_strains_low: "strains"
+no_strain_match: "No strains match your filters."
+modal_plant_breeder_select: "Sélectionnez une variété..."
+
+# Activities
+title_activity_low: "activity"
+title_activities_low: "activities"
+
+# Sensors
+title_sensor_low: "sensor"
+title_sensors_low: "sensors"
+
+
+# Modals
+modal_title_info: "Basic Info"
+modal_title_options: "Options"
+modal_title_preview: "Preview"
+modal_preview_empty: "Fill in the form to see a preview"
+modal_title_description: "Description"
+modal_title_new_strain: "New Strain"
+modal_title_genetics: "Genetics"
+modal_title_details: "Details"
+
+# Other
+cancel: "Cancel"
+save: "Save"
+layout_grid: "Grid View"
+layout_table: "Table View"
+bold: "Gras"
+italic: "Italique"
+heading: "Titre"
+link: "Lien"
+list: "Liste"

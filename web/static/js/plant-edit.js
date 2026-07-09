@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Initialize autocomplete on strain and zone selects
     const zoneAC = new IsleyAutocomplete(zoneSelect, {
-        placeholder: "Type to search zones...",
+        placeholder: zoneSelect.dataset.placeholder,
     });
     const strainAC = new IsleyAutocomplete(strainSelect, {
-        placeholder: "Type to search strains...",
+        placeholder: strainSelect.dataset.placeholder,
     });
 
     // Show/Hide New Zone Input

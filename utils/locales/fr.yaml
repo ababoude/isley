@@ -426,11 +426,11 @@ backup_sqlite_perf_desc: "L'importation de données de capteurs dans SQLite peut
 backup_drop_text: "Glissez-déposez une sauvegarde Isley (.zip) ici, ou cliquez pour parcourir"
 backup_clear: "Effacer"
 backup_skip_sensor: "Ignorer les données de capteurs"
-backup_skip_sensor_hint: "recommandé pour SQLite — importation considérablement plus rapide"
+backup_skip_sensor_hint: "recommandé pour SQLite (importation considérablement plus rapide)"
 backup_restore_btn: "Restaurer la sauvegarde"
 backup_restoring: "Restauration..."
 backup_sqlite_title: "Transfert de fichier SQLite"
-backup_sqlite_desc: "Transférez le fichier de base de données SQLite directement. C'est le moyen le plus rapide de cloner ou restaurer une instance SQLite — pas d'importation ligne par ligne."
+backup_sqlite_desc: "Transférez le fichier de base de données SQLite directement. C'est le moyen le plus rapide de cloner ou restaurer une instance SQLite (pas d'importation ligne par ligne.)"
 backup_sqlite_download_title: "Télécharger la base de données actuelle"
 backup_sqlite_download_desc: "Téléchargez le fichier .db pour l'utiliser sur une autre instance ou comme sauvegarde."
 backup_sqlite_download_btn: "Télécharger le fichier .db"
@@ -496,14 +496,14 @@ api_aci_token_not_configured: "ACIToken n'est pas configuré"
 api_activity_deleted: "Activité supprimée avec succès"
 api_activity_updated: "Activité mise à jour avec succès"
 api_api_ingest_disabled: "L'ingestion API est désactivée"
-api_api_key_generated: "Clé API générée avec succès. Copiez-la maintenant — elle ne sera plus affichée."
+api_api_key_generated: "Clé API générée avec succès. Copiez-la maintenant (elle ne sera plus affichée.)"
 api_breeder_deleted: "Éleveur supprimé"
 api_breeder_updated: "Éleveur mis à jour"
 api_backup_in_progress: "Une sauvegarde est déjà en cours"
 api_backup_started: "Sauvegarde lancée"
 api_backup_file_too_large: "Le fichier dépasse la taille maximale autorisée pour les sauvegardes"
 api_image_too_large: "L'envoi d'image dépasse la taille autorisée"
-api_backup_extract_too_large: "Extraction de la sauvegarde annulée — les données extraites dépassent la taille maximale autorisée"
+api_backup_extract_too_large: "Extraction de la sauvegarde annulée (les données extraites dépassent la taille maximale autorisée)"
 api_cannot_delete_last_status: "Impossible de supprimer la dernière entrée de statut d'une plante"
 api_database_error: "Erreur de base de données"
 api_database_query_error: "Erreur de requête de base de données"
@@ -669,73 +669,82 @@ activity_filter_any: "Tous"
 activity_required_metrics: "Métriques requises"
 activity_optional_metrics: "Métriques optionnelles"
 
-# --- MISSING TRANSLATIONS ADDED BY i18n_sync.go ---
-# English: CannaDB import is disabled. Enable it in Settings.
+# Vérifiée par Ababoude
 api_cannadb_disabled: "L'import CannaDB est désactivé. Activez-le dans les Paramètres."
-
-# English: Failed to import strain from CannaDB.
 api_cannadb_import_failed: "Échec de l'import de la variété depuis CannaDB."
-
-# English: Strain imported from CannaDB
 api_cannadb_imported: "Variété importée depuis CannaDB"
-
-# English: Invalid CannaDB record identifier.
 api_cannadb_invalid_uri: "Identifiant d'enregistrement CannaDB invalide."
-
-# English: That strain could not be found on CannaDB.
 api_cannadb_not_found: "Cette variété est introuvable sur CannaDB."
-
-# English: Please enter a strain name to search.
 api_cannadb_query_required: "Veuillez saisir un nom de variété à rechercher."
-
-# English: CannaDB is rate limiting requests. Please try again shortly.
 api_cannadb_rate_limited: "CannaDB limite le nombre de requêtes. Veuillez réessayer sous peu."
-
-# English: Failed to search CannaDB.
 api_cannadb_search_failed: "Échec de la recherche sur CannaDB."
-
-# English: Override the CannaDB API endpoint. Leave blank to use the default public API.
 cannadb_base_url_desc: "Remplacez le point de terminaison de l'API CannaDB. Laissez vide pour utiliser l'API publique par défaut."
-
-# English: CannaDB API URL (optional)
 cannadb_base_url_label: "URL de l'API CannaDB (facultatif)"
-
-# English: Allow importing strain details from the public CannaDB database (cannadb.org) directly into your strain library.
 cannadb_enabled_desc: "Autorise l'import des détails de variétés depuis la base de données publique CannaDB (cannadb.org) directement dans votre bibliothèque de variétés."
-
-# English: Enable CannaDB strain import
 cannadb_enabled_info: "Activer l'import de variétés CannaDB"
-
-# English: Import
 cannadb_import_action: "Importer"
-
-# English: Import from CannaDB
 cannadb_import_button: "Importer depuis CannaDB"
-
-# English: Import strain from CannaDB
 cannadb_import_title: "Importer une variété depuis CannaDB"
-
-# English: Importing...
 cannadb_importing: "Import en cours..."
-
-# English: Match
 cannadb_match: "Correspondance"
-
-# English: No matching strains found.
 cannadb_no_results: "Aucune variété correspondante trouvée."
-
-# English: Search
 cannadb_search_button: "Rechercher"
-
-# English: Search strains by name...
 cannadb_search_placeholder: "Rechercher des variétés par nom..."
-
-# English: Searching CannaDB...
 cannadb_searching: "Recherche sur CannaDB..."
-
-# English: CannaDB Strain Import
 settings_cannadb: "Import de variétés CannaDB"
-
-# English: View on CannaDB
 view_on_cannadb: "Voir sur CannaDB"
 
+## FIX 05/07/2026 par Ababoude
+# Paramètres
+title_stage: "Stade"
+title_low: "Bas"
+title_high: "Haut"
+vpd: "Plages de VPD par stade"
+settings_vpd_desc: "Définissez la plage de VPD idéale (en kPa) pour chaque stade de croissance. Laissez vide pour désactiver l’indicateur."
+line_range_100: "100 dernières lignes"
+line_range_200: "200 dernières lignes"
+line_range_500: "500 dernières lignes"
+line_range_1000: "1000 dernières lignes"
+stream_grab: "Paramètre de capture de flux"
+
+
+# Plantes
+title_plant_low: "plante"
+title_plants_low: "plantes"
+modal_plant_zone_search: "Ecrivez pour rechercher des zones..."
+modal_plant_strain_search: "Ecrivez pour rechercher des variétés..."
+
+# Variétés
+title_strain_low: "variété"
+title_strains_low: "variétés"
+modal_strain_breeder_select: "Sélectionnez une variété..."
+no_strain_match: "Aucune variété ne correspond à vos filtres."
+
+# Activitées
+title_activity_low: "activité"
+title_activities_low: "activités"
+
+# Capteurs
+title_sensor_low: "capteur"
+title_sensors_low: "capteurs"
+
+# Modals
+modal_title_info: "Informations"
+modal_title_options: "Options"
+modal_title_preview: "Aperçu"
+modal_preview_empty: "Remplissez le formulaire pour voir un aperçu"
+modal_title_description: "Description"
+modal_title_new_strain: "Nouvelle variété"
+modal_title_genetics: "Génétique"
+modal_title_details: "Détails"
+
+# Autre
+cancel: "Annuler"
+save: "Sauvegarder"
+bold: "Gras"
+italic: "Italique"
+heading: "Titre"
+link: "Lien"
+list: "Liste"
+layout_grid: "Vue en grille"
+layout_table: "Vue en liste"

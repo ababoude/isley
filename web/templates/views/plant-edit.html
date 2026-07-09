@@ -18,7 +18,7 @@
         </h1>
         <div>
             <a href="/plant/{{ .plant.ID }}" class="btn btn-secondary me-2">
-                <i class="fa-solid fa-xmark me-1"></i> Cancel
+                <i class="fa-solid fa-xmark me-1"></i> {{ .lcl.cancel }}
             </a>
             <button type="button" class="btn btn-danger" id="deletePlantButton">
                 <i class="fa-solid fa-trash me-1"></i> {{ .lcl.delete_plant }}
@@ -36,7 +36,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-circle-info me-1"></i> Basic Info
+                            <i class="fa-solid fa-circle-info me-1"></i> {{ .lcl.plant_name }}
                         </h2>
 
                         <div class="row g-3">
@@ -49,7 +49,7 @@
                             <!-- Zone -->
                             <div class="col-md-6">
                                 <label for="zoneSelect" class="form-label required">{{ .lcl.title_zone }}</label>
-                                <select class="form-select" id="zoneSelect" required>
+                                <select class="form-select" id="zoneSelect" data-placeholder="{{ .lcl.modal_plant_zone_search }}" required>
                                     {{ range .zones }}
                                     <option value="{{ .ID }}" {{ if eq .ID $.plant.ZoneID }}selected{{ end }}>{{ .Name }}</option>
                                     {{ end }}
@@ -66,7 +66,7 @@
                             <!-- Strain -->
                             <div class="col-md-6">
                                 <label for="strainSelect" class="form-label required">{{ .lcl.title_strain }}</label>
-                                <select class="form-select" id="strainSelect" required>
+                                <select class="form-select" id="strainSelect" data-placeholder="{{ .lcl.modal_plant_strain_search }}" required>
                                     {{ range .strains }}
                                     <option {{ if eq .ID $.plant.StrainID }}selected{{ end }} value="{{ .ID }}">{{ .Name }} ({{ .Breeder }})</option>
                                     {{ end }}
@@ -87,7 +87,7 @@
                 <div class="card mb-4 d-none" id="newStrainCard">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-cannabis me-1"></i> New Strain
+                            <i class="fa-solid fa-cannabis me-1"></i> {{ .lcl.modal_title_new_strain }}
                         </h2>
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -115,7 +115,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-sliders me-1"></i> Details
+                            <i class="fa-solid fa-sliders me-1"></i> {{ .lcl.modal_title_details }}
                         </h2>
 
                         <div class="row g-3">

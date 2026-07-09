@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const curZone = filterZone.value;
 
         // Plant filter
-        filterPlant.innerHTML = '<option value="">All</option>';
+        filterPlant.innerHTML = '<option value="">{{ .lcl.filter_all }}</option>';
         plants.forEach(p => {
             const opt = document.createElement("option");
             opt.value = p;
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Activity filter
-        filterActivity.innerHTML = '<option value="">All</option>';
+        filterActivity.innerHTML = '<option value="">{{ .lcl.filter_all }}</option>';
         activities.forEach(a => {
             const opt = document.createElement("option");
             opt.value = a;
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Zone filter
-        filterZone.innerHTML = '<option value="">All</option>';
+        filterZone.innerHTML = '<option value="">{{ .lcl.filter_all }}</option>';
         zones.forEach(z => {
             const opt = document.createElement("option");
             opt.value = z;
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        resultCount.textContent = `${data.length} activit${data.length !== 1 ? "ies" : "y"}`;
+        resultCount.textContent = `${data.length} ${data.length !== 1 ? "{{ .lcl.title_activities_low }}" : "{{ .lcl.title_activitiy_low }}"}`;
 
         if (data.length === 0) {
             tableBody.innerHTML = "";

@@ -392,12 +392,19 @@ color: #0d6efd; /* Primary color */
             <!-- VPD Stage Ranges -->
             <div class="card mb-4 shadow-sm card-table">
                 <div class="card-header bg-themed">
-                    <h2 class="h5 mb-0">&#127807; VPD Stage Ranges</h2>
-                    <small class="text-muted">Set the ideal VPD range (kPa) for each growth stage. Leave blank to disable the indicator.</small>
+                    <h2 class="h5 mb-0">&#127807; {{ .lcl.vpd }}</h2>
+                    <small class="text-muted">{{ .lcl.settings_vpd_desc }}</small>
                 </div>
                 <div class="card-body">
                     <table class="table table-sm mb-0" id="vpdStageTable">
-                        <thead class="bg-themed"><tr><th>Stage</th><th>Low (kPa)</th><th>High (kPa)</th><th></th></tr></thead>
+                        <thead class="bg-themed">
+							<tr>
+								<th>{{ .lcl.title_stage }}</th>
+								<th>{{ .lcl.title_low }} (kPa)</th>
+								<th>{{ .lcl.title_high }} (kPa)</th>
+								<th></th>
+							</tr>
+						</thead>
                         <tbody id="vpdStageTableBody"></tbody>
                     </table>
                 </div>
@@ -427,7 +434,7 @@ color: #0d6efd; /* Primary color */
             <!-- Stream Capture Settings (inputs linked to settingsForm via form attribute) -->
             <div class="card mb-4 shadow-sm border-start border-4 border-primary mt-4">
                 <div class="card-header bg-themed">
-                    <h2 class="h5 card-title mb-0"><i class="fa fa-camera me-2"></i>&#128249; Stream Capture Settings</h2>
+                    <h2 class="h5 card-title mb-0"><i class="fa fa-camera me-2"></i>&#128249; {{ .lcl.stream_grab }}</h2>
                 </div>
                 <div class="card-body">
                     <div class="form-check form-switch">
@@ -912,7 +919,7 @@ color: #0d6efd; /* Primary color */
                 '<td>' + st.status + '</td>' +
                 '<td><input type="number" class="form-control form-control-sm vpd-low" step="0.01" value="' + (st.vpd_low != null ? st.vpd_low.toFixed(2) : '') + '" placeholder="—"></td>' +
                 '<td><input type="number" class="form-control form-control-sm vpd-high" step="0.01" value="' + (st.vpd_high != null ? st.vpd_high.toFixed(2) : '') + '" placeholder="—"></td>' +
-                '<td><button type="button" class="btn btn-sm btn-primary vpd-save-btn">Save</button></td>';
+                '<td><button type="button" class="btn btn-sm btn-primary vpd-save-btn">{{ .lcl.save }}</button></td>';
             tbody.appendChild(tr);
         });
         tbody.querySelectorAll('.vpd-save-btn').forEach(function(btn) {

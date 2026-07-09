@@ -16,7 +16,7 @@
             <i class="fa-solid fa-plus me-2"></i>{{ .lcl.add_new_plant }}
         </h1>
         <a href="/plants" class="btn btn-secondary">
-            <i class="fa-solid fa-xmark me-1"></i> Cancel
+            <i class="fa-solid fa-xmark me-1"></i> {{ .lcl.cancel }}
         </a>
     </div>
 
@@ -28,7 +28,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-circle-info me-1"></i> Basic Info
+                            <i class="fa-solid fa-circle-info me-1"></i> {{ .lcl.modal_title_info }}
                         </h2>
 
                         <div class="row g-3">
@@ -41,7 +41,7 @@
                             <!-- Zone -->
                             <div class="col-md-6">
                                 <label for="zoneSelect" class="form-label required">{{ .lcl.title_zone }}</label>
-                                <select class="form-select" id="zoneSelect" required>
+                                <select class="form-select" id="zoneSelect" data-placeholder="{{ .lcl.modal_plant_zone_search }}" required>
                                     <option value="" disabled selected>Select zone...</option>
                                     {{ range .zones }}
                                     <option value="{{ .ID }}">{{ .Name }}</option>
@@ -59,7 +59,7 @@
                             <!-- Strain -->
                             <div class="col-md-6">
                                 <label for="strainSelect" class="form-label required">{{ .lcl.title_strain }}</label>
-                                <select class="form-select" id="strainSelect" required>
+                                <select class="form-select" id="strainSelect" data-placeholder="{{ .lcl.modal_plant_strain_search }}" required>
                                     <option value="" disabled selected>Select strain...</option>
                                     {{ range .strains }}
                                     <option value="{{ .ID }}">{{ .Name }} ({{ .Breeder }})</option>
@@ -86,7 +86,7 @@
                 <div class="card mb-4 d-none" id="newStrainCard">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-cannabis me-1"></i> New Strain
+                            <i class="fa-solid fa-cannabis me-1"></i> {{ .lcl.modal_title_new_strain }}
                         </h2>
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -114,7 +114,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-sliders me-1"></i> Options
+                            <i class="fa-solid fa-sliders me-1"></i> {{ .lcl.modal_title_options }}
                         </h2>
 
                         <div class="row g-3">
@@ -168,11 +168,11 @@
                 <div class="card plant-infobox sticky-top" style="top: 1rem;">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary text-center mb-3">
-                            <i class="fa-solid fa-eye me-1"></i> Preview
+                            <i class="fa-solid fa-eye me-1"></i> {{ .lcl.modal_title_preview }}
                         </h2>
                         <div id="plantPreview" class="text-center text-muted">
                             <i class="fa-solid fa-seedling fa-3x mb-3" style="opacity: 0.3"></i>
-                            <p>Fill in the form to see a preview</p>
+                            <p>{{ .lcl.modal_preview_empty }}</p>
                         </div>
                     </div>
                 </div>

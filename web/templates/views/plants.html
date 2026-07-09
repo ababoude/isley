@@ -30,10 +30,10 @@
 
             <!-- Layout toggle -->
             <div class="btn-group" role="group" aria-label="Layout toggle">
-                <button class="btn btn-sm layout-toggle active" data-layout="cards" title="Card view">
+                <button class="btn btn-sm layout-toggle active" data-layout="cards" title="{{ .lcl.layout_grid }}">
                     <i class="fa-solid fa-grip"></i>
                 </button>
-                <button class="btn btn-sm layout-toggle" data-layout="table" title="Table view">
+                <button class="btn btn-sm layout-toggle" data-layout="table" title="{{ .lcl.layout_table }}">
                     <i class="fa-solid fa-table-list"></i>
                 </button>
             </div>
@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Zone filter — only relevant for living plants
         if (currentView === "living") {
             filterZoneGroup.style.display = "";
-            filterZone.innerHTML = '<option value="">All</option>';
+            filterZone.innerHTML = '<option value="">{{ .lcl.filter_all }}</option>';
             zones.forEach(z => {
                 const opt = document.createElement("option");
                 opt.value = z;
@@ -347,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // Breeder filter
-        filterBreeder.innerHTML = '<option value="">All</option>';
+        filterBreeder.innerHTML = '<option value="">{{ .lcl.filter_all }}</option>';
         breeders.forEach(b => {
             const opt = document.createElement("option");
             opt.value = b;
@@ -357,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Status filter
-        filterStatus.innerHTML = '<option value="">All</option>';
+        filterStatus.innerHTML = '<option value="">{{ .lcl.filter_all }}</option>';
         statuses.forEach(s => {
             const opt = document.createElement("option");
             opt.value = s;
@@ -451,7 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
 
-        resultCount.textContent = `${data.length} plant${data.length !== 1 ? "s" : ""}`;
+        resultCount.textContent = `${data.length} ${data.length !== 1 ? "{{ .lcl.title_plants_low }}" : "{{ .lcl.title_plant_low }}"}`;
 
         if (data.length === 0) {
             cardsContainer.innerHTML = "";
@@ -486,7 +486,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 ? `<span class="pc-stat"><i class="fa-solid fa-weight-scale me-1"></i>${p.harvest_weight ? p.harvest_weight + "g" : "—"}</span>`
                 : currentView === "dead"
                 ? `<span class="pc-stat"><i class="fa-solid fa-calendar-xmark me-1"></i>${p.harvest_date ? new Date(p.harvest_date).toLocaleDateString() : "—"}</span>`
-                : `<span class="pc-stat"><i class="fa-solid fa-calendar-day me-1"></i>Day ${p.current_day || "—"}</span>
+                : `<span class="pc-stat"><i class="fa-solid fa-calendar-day me-1"></i>{{ .lcl.title_day }} ${p.current_day || "—"}</span>
                    <span class="pc-stat"><i class="fa-solid fa-clock me-1"></i>Week ${p.current_week || "—"}</span>`;
 
             const waterInfo = (currentView === "living" && p.days_since_last_watering != null && p.days_since_last_watering >= 0)

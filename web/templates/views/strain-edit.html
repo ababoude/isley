@@ -18,7 +18,7 @@
         </h1>
         <div>
             <a href="/strain/{{ .strain.ID }}" class="btn btn-secondary me-2">
-                <i class="fa-solid fa-xmark me-1"></i> Cancel
+                <i class="fa-solid fa-xmark me-1"></i> {{ .lcl.cancel }}
             </a>
             <button type="button" class="btn btn-danger" id="deleteStrainButton">
                 <i class="fa-solid fa-trash me-1"></i> {{ .lcl.delete_strain }}
@@ -36,7 +36,7 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="h5 card-title text-primary mb-3">
-                            <i class="fa-solid fa-circle-info me-1"></i> Basic Info
+                            <i class="fa-solid fa-circle-info me-1"></i> {{ .lcl.modal_title_info }}
                         </h2>
 
                         <div class="row g-3">
